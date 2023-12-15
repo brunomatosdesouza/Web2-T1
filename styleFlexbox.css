@@ -1,0 +1,28 @@
+* {
+    /* aplica a correção de tamanhos (contar margem, padding, etc)
+       para bom funcionamento do CSS float */
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .row {
+        flex-direction: row;
+    }   
+}
+
+.column {
+    padding: 15px;
+}
+  
+.column.side {
+    flex: 1;
+}
+  
+.column.middle {
+    flex: 2;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="styleSass.css" />
+        <link rel="stylesheet" type="text/css" href="styleFlexbox.css" />
+        <title>Editar Filtros</title>
+    </head>
+
+    <body>
+
+        <div class="header">
+            <h1><i class="material-icons">language</i> ニュース <i class="material-icons">language</i></h1>
+            
+        </div>
+    
+        <div class="row1">
+            <div class="row2">
+                <div class="column side menu">
+                    <ul>
+                        <li><a href="/">Voltar</a></li>
+                    </ul>
+                </div>
+                <h1>Selecione os filtros desejados:</h1>
+                <h2>Tags:</h2>
+                <div class="dropdown">
+                    <form action="/">
+                        <select id="tag" class="dropdown-content" name="parametro">
+                            <option value="">Selecione</option>
+                            <option value="Politica">Politica</option>
+                            <option value="Natureza">Natureza</option>
+                            <option value="Internacional">Internacional</option>
+                        </select>
+                        <input type="submit" class="confirm" value="Filtrar">
+                    </form>
+                </div>
+                
+            </div>
+
+            <h2>Filtrar por localização:</h2>
+            <button onclick="getLocation()" class="confirm">Geolocalização</button>
+            <div class="form">
+                <form action="/" id="formGeo">
+                    <br><input type="text" id="country" name="pais" placeholder="País"><br><br>
+                    <input type="text" id="state" name="estado" placeholder="Estado"><br><br>
+                    <input type="text" id="city" name="cidade" placeholder="Cidade"><br><br>
+                    <input type="submit" class="confirm" value="Filtrar">
+                </form>
+
+                <script>
+                    var x = document.getElementById("demo");
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition, showError);
+                        } else {
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+                    }
+
+                    function showPosition(position) {
+                        var url = "https://nominatim.openstreetmap.org/reverse?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&format=json&json_callback=showPositionInfo";
+                        var script = document.createElement('script');
+                        script.src = url;
+                        document.body.appendChild(script);
+                    }
+
+                    function showPositionInfo(positionInfo) {
+                        document.getElementById("city").value = positionInfo.address.city;
+                        
+                        document.getElementById("state").value = positionInfo.address.state;
+
+                        document.getElementById("country").value = positionInfo.address.country;
+
+                    }
+
+                    function showError(error) {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                x.innerHTML = "User denied the request for Geolocation."
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                x.innerHTML = "Location information is unavailable."
+                                break;
+                            case error.TIMEOUT:
+                                x.innerHTML = "The request to get user location timed out."
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                x.innerHTML = "An unknown error occurred."
+                                break;
+                        }
+                    }
+                </script>
+            </div>
+    
+        </div>
+
+    </body>
+
+</html>

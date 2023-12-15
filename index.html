@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="styleSass.css" />
+    <link rel="stylesheet" type="text/css" href="styleFlexbox.css" />
+    <title>Nyuusu</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1><i class="material-icons">language</i> ニュース <i class="material-icons">language</i></h1>     
+    </div>
+
+    <div class="row1">
+        <div class="row2">
+            <div class="column side menu">
+                <ul>
+                    <li><a href="/filtros.html">Editar Filtros</a></li>
+                </ul>
+            </div>
+
+            <div class="column middle" style="text-align: center;">
+                <h1>Notícias do mundo, em um único lugar</h1>
+                <p>Navegue pelo feed ou filtre as notícias como desejado.</p>
+            </div>
+            
+            <div class="tabNot">
+                <form>
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pesquisar..." name="parametro">
+                </form>
+                
+                <table id="myTable">
+                    <tr class="headerTable">
+                        <th style="width:10%;">Tags</th>
+                        <th style="width:80%;">Notícia</th>
+                        <th style="width:10%;">Link</th>
+                    </tr>
+                    <tr>
+                        <td>Brazil, Natureza, Política</td>
+                        <td>'Natureza em chamas': fotógrafo transforma caos climático em poesia…</td>
+                        <td><li><a href="https://noticias.uol.com.br/meio-ambiente/ultimas-noticias/redacao/2023/12/14/fotografo-imagens-mudancas-climaticas.htm">Link</li></td>
+                    </tr>
+                    <tr>
+                        <td>Brazil, São Paulo, Mobilidade Urbana</td>
+                        <td>Tarifa de metrô, ônibus e trem em SP vai subir para R$ 5</td>
+                        <td><li><a href="https://viatrolebus.com.br/2023/12/tarifa-de-metro-onibus-e-trem-em-sp-vai-subir-para-r-5/">Link</li></td>
+                    </tr>
+                    <tr>
+                        <td>Brazil, São Paulo, São Carlos, Trânsito</td>
+                        <td>Novo semafóro em cruzamento no Centro entra em operação</td>
+                        <td><li><a href="https://www.saocarlosagora.com.br/cidade/semaforo-em-cruzamento-no-centro-entra-em-operacao/164957/">Link</li></td>
+                    </tr>
+                    <tr>
+                        <td>Internacional, Venezuela, Guiana, Política</td>
+                        <td>Presidentes de Venezuela e Guiana se reúnem para discutir crise em Essequibo</td>
+                        <td><li><a href="https://www.cnnbrasil.com.br/internacional/presidentes-de-venezuela-e-guiana-se-reunem-para-discutir-crise-em-essequibo/">Link</li></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+        
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        </script>
+</body>
+
+</html>

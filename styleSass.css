@@ -1,0 +1,131 @@
+html {
+  font-family: "Lucida Sans", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.header {
+  text-align: center;
+  background-color: #1f4b03;
+  color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 3px 5px #0f720f;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #0f720f;
+  color: #ffffff;
+  box-shadow: 0 3px 5px #000000;
+}
+.menu li:hover {
+  background-color: #0b520b;
+}
+.menu a {
+  color: #ffffff;
+}
+
+.aside {
+  border-radius: 15px;
+  border-color: #0f720f;
+  background-color: #0f720f;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 3px 5px #000000;
+}
+
+.footer {
+  background-color: #0b520b;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* The search field 
+.search {
+    box-sizing: border-box;
+    //background-image: url('<i class="material-icons">search</i>');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: 3px solid #ddd;
+    margin-left: 15px;
+}
+*/
+.search {
+  box-sizing: border-box;
+  background-position: 14px 12px;
+  font-size: 24px;
+}
+
+.confirm {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: medium;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  color: #ddd;
+  background-color: #0f720f;
+  cursor: pointer;
+}
+
+.confirm:hover {
+  background-color: #0b520b;
+}
+
+#myInput {
+  background-image: url("searchicon.png"); /* Add a search icon to input */
+  background-size: 1%;
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+.headerTable {
+  color: #ddd;
+  background-color: #0f720f;
+}
+
+#tag {
+  padding: 8px;
+}
+
+/*# sourceMappingURL=styleSass.css.map */
